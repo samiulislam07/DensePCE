@@ -1,5 +1,5 @@
 CMakeFiles/common-utils.dir/truss/decompose/extern_variables.cpp.o: \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/extern_variables.cpp \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/extern_variables.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/cstdio \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DTIME_RESULTS -DUSE_LOG
 
-CXX_INCLUDES = -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src
+CXX_INCLUDES = -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src
 
 CXX_FLAGS =  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native
 

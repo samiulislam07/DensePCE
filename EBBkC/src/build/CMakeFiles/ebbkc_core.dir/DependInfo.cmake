@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.cpp" "CMakeFiles/ebbkc_core.dir/def.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/def.cpp.o.d"
-  "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp" "CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o.d"
-  "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.cpp" "CMakeFiles/ebbkc_core.dir/set_operation.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/set_operation.cpp.o.d"
-  "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp" "CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o.d"
-  "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o.d"
-  "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o.d"
+  "/mnt/h/Projects/DensePCE/EBBkC/src/def.cpp" "CMakeFiles/ebbkc_core.dir/def.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/def.cpp.o.d"
+  "/mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp" "CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o.d"
+  "/mnt/h/Projects/DensePCE/EBBkC/src/set_operation.cpp" "CMakeFiles/ebbkc_core.dir/set_operation.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/set_operation.cpp.o.d"
+  "/mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp" "CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o.d"
+  "/mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o.d"
+  "/mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o" "gcc" "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

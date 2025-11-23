@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/h/DensePCE_Project/DensePCE/EBBkC/src
+CMAKE_SOURCE_DIR = /mnt/h/Projects/DensePCE/EBBkC/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build
+CMAKE_BINARY_DIR = /mnt/h/Projects/DensePCE/EBBkC/src/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/graph-pre-processing.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/graph-pre-processing.dir/progress.make
 include CMakeFiles/graph-pre-processing.dir/flags.make
 
 CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o: CMakeFiles/graph-pre-processing.dir/flags.make
-CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp
+CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o: /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp
 CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o: CMakeFiles/graph-pre-processing.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o -MF CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o.d -o CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o -MF CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o.d -o CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp
 
 CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp > CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp > CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.i
 
 CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp -o CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp -o CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.s
 
 # Object files for target graph-pre-processing
 graph__pre__processing_OBJECTS = \
@@ -93,7 +93,7 @@ graph__pre__processing_EXTERNAL_OBJECTS =
 libgraph-pre-processing.a: CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o
 libgraph-pre-processing.a: CMakeFiles/graph-pre-processing.dir/build.make
 libgraph-pre-processing.a: CMakeFiles/graph-pre-processing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgraph-pre-processing.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgraph-pre-processing.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/graph-pre-processing.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graph-pre-processing.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/graph-pre-processing.dir/clean:
 .PHONY : CMakeFiles/graph-pre-processing.dir/clean
 
 CMakeFiles/graph-pre-processing.dir/depend:
-	cd /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/h/DensePCE_Project/DensePCE/EBBkC/src /mnt/h/DensePCE_Project/DensePCE/EBBkC/src /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles/graph-pre-processing.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/h/Projects/DensePCE/EBBkC/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/h/Projects/DensePCE/EBBkC/src /mnt/h/Projects/DensePCE/EBBkC/src /mnt/h/Projects/DensePCE/EBBkC/src/build /mnt/h/Projects/DensePCE/EBBkC/src/build /mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles/graph-pre-processing.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/graph-pre-processing.dir/depend
 

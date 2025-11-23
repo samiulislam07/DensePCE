@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src
+# Install script for directory: /mnt/h/Projects/DensePCE/EBBkC/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/h/Projects/DensePCE/EBBkC/src/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,7 +1,7 @@
 CMakeFiles/common-utils.dir/truss/util/log/log.cpp.o: \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/log/log.cpp \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/log/log.cpp \
  /usr/include/stdc-predef.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/log/log.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/log/log.h \
  /usr/include/c++/13/cstdio \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -164,7 +164,7 @@ CMakeFiles/common-utils.dir/truss/util/log/log.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/log/../../util/timer.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/log/../../util/timer.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/bits/locale_classes.h \

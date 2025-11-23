@@ -1,7 +1,7 @@
 CMakeFiles/common-utils.dir/truss/util/md5.cpp.o: \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/md5.cpp \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/md5.cpp \
  /usr/include/stdc-predef.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/md5.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/md5.h \
  /usr/include/c++/13/cstring \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

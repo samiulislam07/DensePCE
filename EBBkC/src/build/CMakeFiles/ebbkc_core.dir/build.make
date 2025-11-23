@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/h/DensePCE_Project/DensePCE/EBBkC/src
+CMAKE_SOURCE_DIR = /mnt/h/Projects/DensePCE/EBBkC/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build
+CMAKE_BINARY_DIR = /mnt/h/Projects/DensePCE/EBBkC/src/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ebbkc_core.dir/depend.make
@@ -70,88 +70,88 @@ include CMakeFiles/ebbkc_core.dir/progress.make
 include CMakeFiles/ebbkc_core.dir/flags.make
 
 CMakeFiles/ebbkc_core.dir/def.cpp.o: CMakeFiles/ebbkc_core.dir/flags.make
-CMakeFiles/ebbkc_core.dir/def.cpp.o: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.cpp
+CMakeFiles/ebbkc_core.dir/def.cpp.o: /mnt/h/Projects/DensePCE/EBBkC/src/def.cpp
 CMakeFiles/ebbkc_core.dir/def.cpp.o: CMakeFiles/ebbkc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ebbkc_core.dir/def.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/def.cpp.o -MF CMakeFiles/ebbkc_core.dir/def.cpp.o.d -o CMakeFiles/ebbkc_core.dir/def.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ebbkc_core.dir/def.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/def.cpp.o -MF CMakeFiles/ebbkc_core.dir/def.cpp.o.d -o CMakeFiles/ebbkc_core.dir/def.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/def.cpp
 
 CMakeFiles/ebbkc_core.dir/def.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ebbkc_core.dir/def.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.cpp > CMakeFiles/ebbkc_core.dir/def.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/Projects/DensePCE/EBBkC/src/def.cpp > CMakeFiles/ebbkc_core.dir/def.cpp.i
 
 CMakeFiles/ebbkc_core.dir/def.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ebbkc_core.dir/def.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.cpp -o CMakeFiles/ebbkc_core.dir/def.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/Projects/DensePCE/EBBkC/src/def.cpp -o CMakeFiles/ebbkc_core.dir/def.cpp.s
 
 CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: CMakeFiles/ebbkc_core.dir/flags.make
-CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp
+CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp
 CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: CMakeFiles/ebbkc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o -MF CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o.d -o CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o -MF CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o.d -o CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp
 
 CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp > CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp > CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.i
 
 CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp -o CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp -o CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.s
 
 CMakeFiles/ebbkc_core.dir/set_operation.cpp.o: CMakeFiles/ebbkc_core.dir/flags.make
-CMakeFiles/ebbkc_core.dir/set_operation.cpp.o: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.cpp
+CMakeFiles/ebbkc_core.dir/set_operation.cpp.o: /mnt/h/Projects/DensePCE/EBBkC/src/set_operation.cpp
 CMakeFiles/ebbkc_core.dir/set_operation.cpp.o: CMakeFiles/ebbkc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ebbkc_core.dir/set_operation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/set_operation.cpp.o -MF CMakeFiles/ebbkc_core.dir/set_operation.cpp.o.d -o CMakeFiles/ebbkc_core.dir/set_operation.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ebbkc_core.dir/set_operation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/set_operation.cpp.o -MF CMakeFiles/ebbkc_core.dir/set_operation.cpp.o.d -o CMakeFiles/ebbkc_core.dir/set_operation.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/set_operation.cpp
 
 CMakeFiles/ebbkc_core.dir/set_operation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ebbkc_core.dir/set_operation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.cpp > CMakeFiles/ebbkc_core.dir/set_operation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/Projects/DensePCE/EBBkC/src/set_operation.cpp > CMakeFiles/ebbkc_core.dir/set_operation.cpp.i
 
 CMakeFiles/ebbkc_core.dir/set_operation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ebbkc_core.dir/set_operation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.cpp -o CMakeFiles/ebbkc_core.dir/set_operation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/Projects/DensePCE/EBBkC/src/set_operation.cpp -o CMakeFiles/ebbkc_core.dir/set_operation.cpp.s
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o: CMakeFiles/ebbkc_core.dir/flags.make
-CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp
+CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o: /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o: CMakeFiles/ebbkc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o -MF CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o.d -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o -MF CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o.d -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp > CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp > CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.i
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.s
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o: CMakeFiles/ebbkc_core.dir/flags.make
-CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp
+CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o: /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp
 CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o: CMakeFiles/ebbkc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o -MF CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o.d -o CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o -MF CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o.d -o CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp > CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp > CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.i
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp -o CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp -o CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.s
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o: CMakeFiles/ebbkc_core.dir/flags.make
-CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o: /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp
+CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o: /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o: CMakeFiles/ebbkc_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o -MF CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o.d -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o -MF CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o.d -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp > CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp > CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.i
 
 CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.s
 
 # Object files for target ebbkc_core
 ebbkc_core_OBJECTS = \
@@ -173,7 +173,7 @@ libebbkc_core.a: CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o
 libebbkc_core.a: CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o
 libebbkc_core.a: CMakeFiles/ebbkc_core.dir/build.make
 libebbkc_core.a: CMakeFiles/ebbkc_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libebbkc_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library libebbkc_core.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ebbkc_core.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ebbkc_core.dir/link.txt --verbose=$(VERBOSE)
 
@@ -186,6 +186,6 @@ CMakeFiles/ebbkc_core.dir/clean:
 .PHONY : CMakeFiles/ebbkc_core.dir/clean
 
 CMakeFiles/ebbkc_core.dir/depend:
-	cd /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/h/DensePCE_Project/DensePCE/EBBkC/src /mnt/h/DensePCE_Project/DensePCE/EBBkC/src /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build/CMakeFiles/ebbkc_core.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /mnt/h/Projects/DensePCE/EBBkC/src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/h/Projects/DensePCE/EBBkC/src /mnt/h/Projects/DensePCE/EBBkC/src /mnt/h/Projects/DensePCE/EBBkC/src/build /mnt/h/Projects/DensePCE/EBBkC/src/build /mnt/h/Projects/DensePCE/EBBkC/src/build/CMakeFiles/ebbkc_core.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ebbkc_core.dir/depend
 

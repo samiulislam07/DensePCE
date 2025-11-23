@@ -1,5 +1,5 @@
 CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o: \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/pkc_reorder.cpp \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/pkc_reorder.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/cassert \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -12,7 +12,7 @@ CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
  /usr/include/assert.h /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/../../util/log/log.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/../../util/log/log.h \
  /usr/include/c++/13/cstdio /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
@@ -124,7 +124,7 @@ CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o: \
  /usr/include/c++/13/bits/functional_hash.h \
  /usr/include/c++/13/bits/hash_bytes.h \
  /usr/include/c++/13/bits/basic_string.tcc \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/../../util/timer.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/../../util/timer.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
@@ -169,8 +169,8 @@ CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /usr/include/c++/13/limits /usr/include/c++/13/ctime \
  /usr/include/c++/13/bits/parse_numbers.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/../graph/graph.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/../graph/graph.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
@@ -342,8 +342,8 @@ CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o: \
  /usr/include/oneapi/tbb/detail/_scoped_lock.h \
  /usr/include/oneapi/tbb/detail/_rtm_rw_mutex.h \
  /usr/include/oneapi/tbb/spin_rw_mutex.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_stdint.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_config.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_traits.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_utils.h
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_stdint.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_config.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_traits.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_utils.h

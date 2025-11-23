@@ -1,7 +1,6 @@
 CMakeFiles/BBkC.dir/main.cpp.o: \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/main.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
- /usr/include/c++/13/bits/requires_hosted.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/main.cpp /usr/include/stdc-predef.h \
+ /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -169,7 +168,7 @@ CMakeFiles/BBkC.dir/main.cpp.o: \
  /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/omp.h \
  /usr/include/c++/13/cassert /usr/include/assert.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/set_operation.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h \
@@ -269,14 +268,14 @@ CMakeFiles/BBkC.dir/main.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/def.h \
  /usr/include/x86_64-linux-gnu/sys/resource.h \
  /usr/include/x86_64-linux-gnu/bits/resource.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_rusage.h \
  /usr/include/c++/13/functional /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/std_function.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \

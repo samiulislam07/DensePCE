@@ -1,7 +1,7 @@
 CMakeFiles/common-utils.dir/truss/util/search/search_util.cpp.o: \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/search/search_util.cpp \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/search/search_util.cpp \
  /usr/include/stdc-predef.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/search/search_util.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/search/search_util.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/x86intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h \
@@ -157,8 +157,8 @@ CMakeFiles/common-utils.dir/truss/util/search/search_util.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/search/../../util/jetbrains_fake.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/search/../../util/log/log.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/search/../../util/jetbrains_fake.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/search/../../util/log/log.h \
  /usr/include/c++/13/cstdio /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \

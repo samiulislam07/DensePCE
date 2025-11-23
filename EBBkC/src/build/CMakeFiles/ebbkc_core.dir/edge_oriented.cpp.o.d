@@ -1,5 +1,5 @@
 CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp \
+ /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/set \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -114,7 +114,7 @@ CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/refwrap.h /usr/include/c++/13/bits/vector.tcc \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/set_operation.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h \
@@ -210,10 +210,9 @@ CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/prfchwintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxfp16intrin.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.h \
- /usr/include/c++/13/cstdio /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/def.h /usr/include/c++/13/cstdio \
+ /usr/include/stdio.h /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
@@ -230,7 +229,7 @@ CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_rusage.h \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/typeinfo \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph.h \
  /usr/include/tbb/concurrent_unordered_map.h \
  /usr/include/oneapi/tbb/concurrent_unordered_map.h \
  /usr/include/oneapi/tbb/detail/_namespace_injection.h \
@@ -337,7 +336,7 @@ CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
  /usr/include/oneapi/tbb/detail/_scoped_lock.h \
  /usr/include/oneapi/tbb/detail/_rtm_rw_mutex.h \
  /usr/include/oneapi/tbb/spin_rw_mutex.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp.h \
  /usr/include/c++/13/ios /usr/include/c++/13/bits/basic_ios.h \
  /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
  /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
@@ -345,29 +344,29 @@ CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_stdint.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_config.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_traits.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_utils.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/log/log.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_stdint.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_config.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_traits.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp/sparsepp/spp_utils.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/log/log.h \
  /usr/include/c++/13/cstdarg \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/timer.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/timer.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/parallel_all_edge_cnc.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/parallel_all_edge_cnc.h \
  /usr/include/c++/13/mutex /usr/include/c++/13/bits/std_mutex.h \
  /usr/include/c++/13/bits/unique_lock.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt/libpopcnt.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/search/search_util.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt/libpopcnt.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/search/search_util.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/x86intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/mm3dnow.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/fma4intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/ammintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/xopintrin.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/search/../../util/jetbrains_fake.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/intersection/intersection_util.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/serialization/pretty_print.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/search/../../util/jetbrains_fake.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/intersection/intersection_util.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/serialization/pretty_print.h \
  /usr/include/c++/13/unordered_set \
  /usr/include/c++/13/bits/unordered_set.h /usr/include/c++/13/valarray \
  /usr/include/c++/13/cmath /usr/include/math.h \
@@ -389,8 +388,8 @@ CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
  /usr/include/c++/13/bits/gslice_array.h \
  /usr/include/c++/13/bits/mask_array.h \
  /usr/include/c++/13/bits/indirect_array.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/timer.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/util.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/timer.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/util.h \
  /usr/include/c++/13/array /usr/include/c++/13/compare \
  /usr/include/fcntl.h /usr/include/x86_64-linux-gnu/bits/fcntl.h \
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
@@ -435,16 +434,16 @@ CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/containers/boolarray.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/containers/boolarray.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/iso646.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/intersection/set_inter_cnt_utils.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/containers/radix_hash_map.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/intersection/set_inter_cnt_utils.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/containers/radix_hash_map.h \
  /usr/include/malloc.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/stat.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_support_update_utils.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/stat.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_support_update_utils.h \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/../util/primitives/local_buffer.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_stat_helper.h \
- /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/extern_variables.h
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/../util/primitives/local_buffer.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_stat_helper.h \
+ /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/extern_variables.h

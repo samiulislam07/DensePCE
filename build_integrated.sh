@@ -5,15 +5,13 @@
 
 set -e  # Exit on any error
 
-# Check for command line argument
+# Check for command line argument, default to dense-pce-r1-m1.cpp
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 <source_file.cpp>"
-    echo "Example: $0 dense-pce-opt.cpp"
-    echo "Example: $0 dense-pce-mod-edge-order.cpp"
-    exit 1
+    SOURCE_FILE="dense-pce-r1-m1.cpp"
+    echo "No source file specified, defaulting to: $SOURCE_FILE"
+else
+    SOURCE_FILE="$1"
 fi
-
-SOURCE_FILE="$1"
 
 # Check if source file exists
 if [ ! -f "$SOURCE_FILE" ]; then
@@ -29,35 +27,46 @@ echo "=== Building Integrated Dense-PCE + EBBkC System ==="
 echo "Source file: $SOURCE_FILE"
 echo "Output executable: $OUTPUT_NAME"
 
-# Clean up old build artifacts to avoid path conflicts
-echo "=== Cleaning up old build artifacts ==="
-# Only remove the EBBkC build directory, keep build_integrated with existing executables
-rm -rf EBBkC/src/build
-
 # Create build directory if it doesn't exist
 mkdir -p build_integrated
-cd build_integrated
 
-echo "=== Step 1: Building EBBkC as a library ==="
+# Check if EBBkC is already compiled
+EBBKC_LIB="build_integrated/libebbkc_core.a"
+EBBKC_COMMON_UTILS="EBBkC/src/build/libcommon-utils.a"
+EBBKC_GRAPH_PREPROC="EBBkC/src/build/libgraph-pre-processing.a"
 
-# Build EBBkC core library
-cd ../EBBkC/src
-mkdir -p build
-cd build
-
-# Clean any existing CMake cache to avoid path conflicts
-rm -f CMakeCache.txt
-rm -rf CMakeFiles
-
-# Configure and build EBBkC
-echo "Configuring EBBkC with CMake..."
-cmake .. -DCMAKE_BUILD_TYPE=Release
-echo "Building EBBkC..."
-make -j$(nproc)
-
-# Copy the library to main directory
-cp libebbkc_core.a ../../../build_integrated/
-cd ../../../build_integrated
+if [ -f "$EBBKC_LIB" ] && [ -f "$EBBKC_COMMON_UTILS" ] && [ -f "$EBBKC_GRAPH_PREPROC" ]; then
+    echo "=== EBBkC library already compiled, skipping EBBkC build ==="
+    cd build_integrated
+else
+    echo "=== Step 1: Building EBBkC as a library ==="
+    
+    # Clean up old build artifacts to avoid path conflicts
+    echo "=== Cleaning up old build artifacts ==="
+    # Only remove the EBBkC build directory, keep build_integrated with existing executables
+    rm -rf EBBkC/src/build
+    
+    cd build_integrated
+    
+    # Build EBBkC core library
+    cd ../EBBkC/src
+    mkdir -p build
+    cd build
+    
+    # Clean any existing CMake cache to avoid path conflicts
+    rm -f CMakeCache.txt
+    rm -rf CMakeFiles
+    
+    # Configure and build EBBkC
+    echo "Configuring EBBkC with CMake..."
+    cmake .. -DCMAKE_BUILD_TYPE=Release
+    echo "Building EBBkC..."
+    make -j$(nproc)
+    
+    # Copy the library to main directory
+    cp libebbkc_core.a ../../../build_integrated/
+    cd ../../../build_integrated
+fi
 
 echo "=== Step 2: Compiling $SOURCE_FILE with EBBkC library ==="
 

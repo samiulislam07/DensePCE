@@ -1,98 +1,98 @@
 [
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/reordering/reorder_utils.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/reordering/reorder_utils.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/reorder_utils.cpp",
   "output": "CMakeFiles/common-utils.dir/truss/util/reordering/reorder_utils.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/pkc_reorder.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/reordering/pkc_reorder.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/pkc_reorder.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/reordering/pkc_reorder.cpp",
   "output": "CMakeFiles/common-utils.dir/truss/util/reordering/pkc_reorder.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/graph/graph.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/graph/graph.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph.cpp",
   "output": "CMakeFiles/common-utils.dir/truss/util/graph/graph.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/log/log.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/log/log.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/log/log.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/log/log.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/log/log.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/log/log.cpp",
   "output": "CMakeFiles/common-utils.dir/truss/util/log/log.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/md5.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/md5.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/md5.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/md5.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/md5.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/md5.cpp",
   "output": "CMakeFiles/common-utils.dir/truss/util/md5.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/search/search_util.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/search/search_util.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/search/search_util.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/util/search/search_util.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/search/search_util.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/search/search_util.cpp",
   "output": "CMakeFiles/common-utils.dir/truss/util/search/search_util.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/decompose/extern_variables.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/extern_variables.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/extern_variables.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/common-utils.dir/truss/decompose/extern_variables.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/extern_variables.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/extern_variables.cpp",
   "output": "CMakeFiles/common-utils.dir/truss/decompose/extern_variables.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DNAVIE_SERIAL_CONSTRUCT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/graph-pre-processing-legacy.dir/truss/util/graph/graph_preprocessing.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DNAVIE_SERIAL_CONSTRUCT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/graph-pre-processing-legacy.dir/truss/util/graph/graph_preprocessing.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
   "output": "CMakeFiles/graph-pre-processing-legacy.dir/truss/util/graph/graph_preprocessing.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/util/graph/graph_preprocessing.cpp",
   "output": "CMakeFiles/graph-pre-processing.dir/truss/util/graph/graph_preprocessing.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/def.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/def.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/def.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/def.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/def.cpp",
   "output": "CMakeFiles/ebbkc_core.dir/def.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/edge_oriented.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/edge_oriented.cpp",
   "output": "CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/set_operation.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/set_operation.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/set_operation.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/set_operation.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/set_operation.cpp",
   "output": "CMakeFiles/ebbkc_core.dir/set_operation.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_merge.cpp",
   "output": "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/iter_helper.cpp",
   "output": "CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DBMP_PROCESSED=1 -DBMP_QUEUE=1 -DBUCKET_BMP=1 -DDISABLE_BUCKET_OPT=1 -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/truss/decompose/pkt_tri_cnt_intermediate.cpp",
   "output": "CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o"
 },
 {
-  "directory": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/build",
-  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/DensePCE_Project/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/BBkC.dir/main.cpp.o -c /mnt/h/DensePCE_Project/DensePCE/EBBkC/src/main.cpp",
-  "file": "/mnt/h/DensePCE_Project/DensePCE/EBBkC/src/main.cpp",
+  "directory": "/mnt/h/Projects/DensePCE/EBBkC/src/build",
+  "command": "/usr/bin/c++ -DTIME_RESULTS -DUSE_LOG -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/sparsepp -I/mnt/h/Projects/DensePCE/EBBkC/src/truss/dependencies/libpopcnt -I/mnt/h/Projects/DensePCE/EBBkC/src  -fopenmp -O3 -DNDEBUG -std=gnu++14 -O3 -g -march=native -o CMakeFiles/BBkC.dir/main.cpp.o -c /mnt/h/Projects/DensePCE/EBBkC/src/main.cpp",
+  "file": "/mnt/h/Projects/DensePCE/EBBkC/src/main.cpp",
   "output": "CMakeFiles/BBkC.dir/main.cpp.o"
 }
 ]
