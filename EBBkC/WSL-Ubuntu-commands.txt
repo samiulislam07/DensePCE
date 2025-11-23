@@ -1,0 +1,40 @@
+## github repo
+cd "/mnt/h/OneDrive - northsouth.edu/Desktop/Dense_PCE/CSE491-/Dense_PCE/Dense-PCE-main/EBBkC/src"
+mkdir -p build
+cd build
+cmake ..
+make
+./BBkC e /mnt/h/OneDrive\ -\ northsouth.edu/Desktop/Dense_PCE/CSE491-/Dense_PCE/Dense-PCE-main/EBBkC/dataset/testK4 3 2
+
+mkdir -p build
+
+cd build
+
+cmake ..
+
+make
+
+./BBkC p /mnt/h/OneDrive\ -\ northsouth.edu/Desktop/Dense_PCE/CSE491-/Dense_PCE/Dense-PCE-main/EBBkC/dataset
+
+# Cohesive_subgraph_book
+
+cd "/mnt/h/OneDrive - northsouth.edu/Desktop/Dense_PCE/CSE491-/Dense_PCE/Dense-PCE-main/EBBkC/Cohesive_subgraph_book/datasets"
+make clean
+make
+
+./edgelist2binary /mnt/h/OneDrive\ -\ northsouth.edu/Desktop/Dense_PCE/CSE491-/Dense_PCE/Dense-PCE-main/EBBkC/dataset test20.clean
+
+
+
+cd "/mnt/h/OneDrive - northsouth.edu/Desktop/EBBkC_study/New folder/EBBkC/src/build"
+make
+./BBkC e /mnt/h/OneDrive\ -\ northsouth.edu/Desktop/EBBkC_study/EBBkC/dataset/testK4 3 2
+
+cd "/mnt/h/OneDrive - northsouth.edu/Desktop/EBBkC_study/EBBkC_modified/src"
+mkdir -p build
+cd build
+cmake ..
+make
+./BBkC e /mnt/h/OneDrive\ -\ northsouth.edu/Desktop/EBBkC_study/EBBkC/dataset/testK4 3 2
+
+./BBkC e /mnt/h/OneDrive\ -\ northsouth.edu/Desktop/EBBkC_study/EBBkC_modified/dataset/test10 4 2

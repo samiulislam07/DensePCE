@@ -1,0 +1,2 @@
+/usr/bin/ar qc libebbkc_core.a CMakeFiles/ebbkc_core.dir/def.cpp.o CMakeFiles/ebbkc_core.dir/edge_oriented.cpp.o CMakeFiles/ebbkc_core.dir/set_operation.cpp.o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_merge.cpp.o CMakeFiles/ebbkc_core.dir/truss/decompose/iter_helper.cpp.o CMakeFiles/ebbkc_core.dir/truss/decompose/pkt_tri_cnt_intermediate.cpp.o
+/usr/bin/ranlib libebbkc_core.a

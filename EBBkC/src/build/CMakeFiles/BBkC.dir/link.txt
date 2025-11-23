@@ -1,0 +1,1 @@
+/usr/bin/c++  -fopenmp -O3 -DNDEBUG CMakeFiles/BBkC.dir/main.cpp.o -o BBkC  libcommon-utils.a libebbkc_core.a libgraph-pre-processing.a libcommon-utils.a 
