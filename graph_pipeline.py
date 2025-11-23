@@ -60,14 +60,194 @@ class WindowsGraphPreprocessor:
             if not self.bbkc_path.exists():
                 raise FileNotFoundError(f"BBkC executable not found at {self.bbkc_path}")
         else:
+            # Check if BBkC exists and is executable
+            bbkc_needs_rebuild = False
+            
             if not self.bbkc_path.exists():
-                raise FileNotFoundError(f"BBkC executable not found at {self.bbkc_path}")
-        
-        # Check edgelist2binary - if missing we will try WSL or fallback to internal
-        if not self.edgelist2binary_path.exists():
-            raise FileNotFoundError(f"edgelist2binary tool not found at {self.edgelist2binary_path}")
+                logger.info("BBkC executable not found. Will attempt to build it.")
+                bbkc_needs_rebuild = True
+            elif not os.access(self.bbkc_path, os.X_OK):
+                logger.warning(f"BBkC does not have execute permissions. Attempting to fix...")
+                try:
+                    os.chmod(self.bbkc_path, 0o755)
+                    logger.info("Successfully added execute permissions to BBkC")
+                except Exception as e:
+                    logger.warning(f"Could not add execute permissions: {e}. Will rebuild.")
+                    bbkc_needs_rebuild = True
+            else:
+                # Test if BBkC actually runs (catches library version issues)
+                try:
+                    result = subprocess.run(
+                        [str(self.bbkc_path), "--help"],
+                        capture_output=True,
+                        text=True,
+                        timeout=5
+                    )
+                    # Check for library version errors in stderr
+                    if result.returncode != 0 or result.stderr:
+                        error_msg = result.stderr.lower() if result.stderr else ""
+                        # Check for common library version error patterns
+                        if any(pattern in error_msg for pattern in [
+                            "glibc", "glibcxx", "version `", "not found",
+                            "library", "so.", "required by"
+                        ]):
+                            logger.warning("BBkC has library version compatibility issues detected in error output")
+                            logger.info("Will attempt to rebuild BBkC on this system...")
+                            bbkc_needs_rebuild = True
+                    # If we get here and no library errors, it should work
+                except (OSError, subprocess.TimeoutExpired) as e:
+                    logger.warning(f"BBkC exists but cannot be executed (possibly library version mismatch): {e}")
+                    logger.info("Will attempt to rebuild BBkC on this system...")
+                    bbkc_needs_rebuild = True
+            
+            # Build BBkC if needed
+            if bbkc_needs_rebuild:
+                if not self._build_bbkc():
+                    raise FileNotFoundError(f"Failed to build BBkC. Please build it manually: cd EBBkC/src && mkdir -p build && cd build && cmake .. && make && cp BBkC ../../../")
+            
+            # Check edgelist2binary
+            if not self.edgelist2binary_path.exists():
+                raise FileNotFoundError(f"edgelist2binary tool not found at {self.edgelist2binary_path}")
+            
+            # Also check execute permissions for edgelist2binary on non-Windows
+            if not os.access(self.edgelist2binary_path, os.X_OK):
+                logger.warning(f"edgelist2binary does not have execute permissions. Attempting to fix...")
+                try:
+                    os.chmod(self.edgelist2binary_path, 0o755)
+                    logger.info("Successfully added execute permissions to edgelist2binary")
+                except Exception as e:
+                    logger.warning(f"Could not add execute permissions: {e}. Please run: chmod +x {self.edgelist2binary_path}")
         
         logger.info("Tool verification completed")
+
+    def _build_bbkc(self):
+        """Build BBkC from source on the current system."""
+        logger.info("=== Building BBkC from source ===")
+        
+        ebbkc_src = self.project_root / "EBBkC" / "src"
+        build_dir = ebbkc_src / "build"
+        
+        if not ebbkc_src.exists():
+            logger.error(f"EBBkC source directory not found at {ebbkc_src}")
+            return False
+        
+        try:
+            # Create build directory
+            build_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Clean old CMake cache
+            cmake_cache = build_dir / "CMakeCache.txt"
+            if cmake_cache.exists():
+                cmake_cache.unlink()
+            
+            # Configure with CMake
+            logger.info("Configuring BBkC with CMake...")
+            cmake_result = subprocess.run(
+                ["cmake", ".."],
+                cwd=build_dir,
+                capture_output=True,
+                text=True,
+                timeout=60
+            )
+            
+            if cmake_result.returncode != 0:
+                logger.error(f"CMake configuration failed: {cmake_result.stderr}")
+                return False
+            
+            # Build with make
+            logger.info("Building BBkC...")
+            make_result = subprocess.run(
+                ["make", "-j"],
+                cwd=build_dir,
+                capture_output=True,
+                text=True,
+                timeout=300
+            )
+            
+            if make_result.returncode != 0:
+                logger.error(f"Build failed: {make_result.stderr}")
+                return False
+            
+            # Find the built BBkC executable
+            built_bbkc = build_dir / "BBkC"
+            if not built_bbkc.exists():
+                logger.error("BBkC executable was not created in build directory")
+                return False
+            
+            # Copy to project root
+            logger.info(f"Copying BBkC to {self.bbkc_path}...")
+            shutil.copy2(built_bbkc, self.bbkc_path)
+            os.chmod(self.bbkc_path, 0o755)
+            
+            logger.info("Successfully built and installed BBkC")
+            return True
+            
+        except subprocess.TimeoutExpired:
+            logger.error("Build process timed out")
+            return False
+        except Exception as e:
+            logger.error(f"Error building BBkC: {e}")
+            return False
+
+    def _build_edgelist2binary(self):
+        """Build edgelist2binary from source on the current system."""
+        logger.info("=== Building edgelist2binary from source ===")
+        
+        edgelist2binary_dir = self.project_root / "EBBkC" / "Cohesive_subgraph_book" / "datasets"
+        
+        if not edgelist2binary_dir.exists():
+            logger.error(f"edgelist2binary source directory not found at {edgelist2binary_dir}")
+            return False
+        
+        if not (edgelist2binary_dir / "makefile").exists() and not (edgelist2binary_dir / "Makefile").exists():
+            logger.error(f"Makefile not found in {edgelist2binary_dir}")
+            return False
+        
+        try:
+            # Create .obj directory if it doesn't exist
+            obj_dir = edgelist2binary_dir / ".obj"
+            obj_dir.mkdir(exist_ok=True)
+            
+            # Build with make
+            logger.info("Building edgelist2binary...")
+            make_result = subprocess.run(
+                ["make"],
+                cwd=edgelist2binary_dir,
+                capture_output=True,
+                text=True,
+                timeout=300
+            )
+            
+            if make_result.returncode != 0:
+                logger.error(f"Build failed: {make_result.stderr or make_result.stdout}")
+                return False
+            
+            # Check if the executable was created
+            built_tool = edgelist2binary_dir / "edgelist2binary"
+            if not built_tool.exists():
+                logger.error("edgelist2binary executable was not created")
+                return False
+            
+            # Ensure it's executable
+            os.chmod(built_tool, 0o755)
+            
+            # Check if the path matches our expected location
+            if built_tool != self.edgelist2binary_path:
+                logger.warning(f"Built executable at {built_tool} doesn't match expected path {self.edgelist2binary_path}")
+                # Path should match, but just in case
+                if not self.edgelist2binary_path.exists():
+                    logger.warning("Expected path doesn't exist, but build succeeded")
+            
+            logger.info("Successfully built edgelist2binary")
+            return True
+            
+        except subprocess.TimeoutExpired:
+            logger.error("Build process timed out")
+            return False
+        except Exception as e:
+            logger.error(f"Error building edgelist2binary: {e}")
+            return False
+
 
     def _to_wsl_path(self, path: Path) -> str:
         """Convert a Windows Path to WSL /mnt/<drive>/... form with proper escaping."""
@@ -162,9 +342,25 @@ class WindowsGraphPreprocessor:
                 if result is None:
                     return False
             else:
-                cmd = [str(self.bbkc_path), "p", str(edges_file)]
+                # BBkC creates output in the same directory as the input file
+                # Use absolute path and don't set cwd
+                edges_abs = Path(edges_file).resolve()
+                
+                # Ensure the input file exists
+                if not edges_abs.exists():
+                    logger.error(f"Input edges file does not exist: {edges_abs}")
+                    return False
+                
+                cmd = [str(self.bbkc_path), "p", str(edges_abs)]
                 logger.info(f"Running command: {' '.join(cmd)}")
-                result = subprocess.run(cmd, capture_output=True, text=True, cwd=output_dir)
+                result = subprocess.run(cmd, capture_output=True, text=True)
+                
+                # Log output for debugging
+                if result.stdout:
+                    logger.debug(f"BBkC stdout: {result.stdout}")
+                if result.stderr:
+                    logger.debug(f"BBkC stderr: {result.stderr}")
+                logger.debug(f"BBkC return code: {result.returncode}")
 
             if result.returncode != 0:
                 logger.error(f"BBkC preprocessing failed: {result.stderr or result.stdout}")
@@ -192,15 +388,45 @@ class WindowsGraphPreprocessor:
         if self.edgelist2binary_path.exists() and not self.is_windows:
             logger.info(f"Converting {clean_file} to binary format using native edgelist2binary")
             try:
-                cmd = [str(self.edgelist2binary_path), str(out_dir), clean_path.name]
+                # edgelist2binary expects: <tool> <output_dir> <clean_file>
+                # Since cwd is set to out_dir, use '.' for output dir and just the filename
+                cmd = [str(self.edgelist2binary_path), ".", clean_path.name]
                 logger.info(f"Running command: {' '.join(cmd)} (cwd={out_dir})")
                 result = subprocess.run(cmd, capture_output=True, text=True, cwd=out_dir)
+                
+                # Check if output files were created first (some tools succeed even with non-zero return codes)
+                if b_adj_file.exists() and b_degree_file.exists():
+                    logger.info("Successfully created binary files using native edgelist2binary")
+                    return True
+                
+                # If files weren't created, check for errors
                 if result.returncode != 0:
-                    logger.warning(f"edgelist2binary failed: {result.stderr or result.stdout}")
+                    error_msg = result.stderr or result.stdout or ""
+                    # Check if this is a library version issue
+                    if any(pattern in error_msg.lower() for pattern in [
+                        "glibc", "glibcxx", "version `", "not found",
+                        "library", "so.", "required by"
+                    ]):
+                        logger.error("edgelist2binary has library version compatibility issues. Attempting to rebuild...")
+                        if self._build_edgelist2binary():
+                            # Retry after rebuilding
+                            logger.info("Retrying edgelist2binary conversion after rebuild...")
+                            result = subprocess.run(cmd, capture_output=True, text=True, cwd=out_dir)
+                            # Check file existence after retry
+                            if b_adj_file.exists() and b_degree_file.exists():
+                                logger.info("Successfully created binary files using native edgelist2binary after rebuild")
+                                return True
+                            if result.returncode != 0:
+                                logger.error(f"edgelist2binary failed after rebuild: {result.stderr or result.stdout}")
+                        else:
+                            logger.error("Failed to rebuild edgelist2binary. Please build it manually.")
+                    else:
+                        logger.warning(f"edgelist2binary failed: {error_msg}")
                 else:
-                    if b_adj_file.exists() and b_degree_file.exists():
-                        logger.info("Successfully created binary files using native edgelist2binary")
-                        return True
+                    # Return code is 0 but files don't exist - this is unexpected
+                    logger.error(f"edgelist2binary completed successfully but binary files were not created")
+                    logger.debug(f"edgelist2binary stdout: {result.stdout}")
+                    logger.debug(f"edgelist2binary stderr: {result.stderr}")
             except Exception as e:
                 logger.warning(f"edgelist2binary error: {e}")
 
