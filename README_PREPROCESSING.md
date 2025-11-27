@@ -1,214 +1,87 @@
 # Graph Preprocessing Pipeline
 
-This document describes the graph preprocessing pipeline for the Dense-PCE project, which converts `.grh` files through multiple stages to create all necessary graph format files.
+This document describes the graph preprocessing pipeline for the Dense-PCE project. This pipeline converts `.grh` files into the efficient binary formats required by the Dense-PCE system.
 
 ## Overview
 
-The preprocessing pipeline converts graph files through the following stages:
+The preprocessing pipeline transforms graph files through the following stages:
 
 ```
 .grh → .edges → .clean → b_adj.bin + b_degree.bin
 ```
 
-## Pipeline Stages
-
-### Stage 1: .grh to .edges
-- **Input**: Graph in adjacency list format (`.grh`)
-- **Output**: Edge list format (`.edges`)
-- **Process**: Parses adjacency lists and extracts unique edges
-
-### Stage 2: .edges to .clean
-- **Input**: Edge list file (`.edges`)
-- **Output**: Cleaned edge list (`.clean`)
-- **Tool**: BBkC preprocessor
-- **Process**: Removes duplicate edges, self-loops, and normalizes node IDs
-
-### Stage 3: .clean to Binary
-- **Input**: Clean edge list (`.clean`)
-- **Output**: Binary adjacency (`b_adj.bin`) and degree (`b_degree.bin`) files
-- **Tool**: Cohesive_subgraph_book/edgelist2binary
-- **Process**: Converts to optimized binary format for fast graph operations
+1.  **.grh to .edges**: Extracts edges from the adjacency list.
+2.  **.edges to .clean**: Uses `BBkC` to remove duplicates, self-loops, and normalize node IDs.
+3.  **.clean to Binary**: Uses `edgelist2binary` to create optimized binary adjacency (`b_adj.bin`) and degree (`b_degree.bin`) files.
 
 ## Usage
 
 ### Prerequisites
 
-Ensure the following tools are built and available:
-```bash
-# Build BBkC
-cd EBBkC/src && mkdir -p build && cd build
-cmake .. && make
-cp BBkC ../../../
-
-# Ensure edgelist2binary is available
-cd EBBkC/Cohesive_subgraph_book/datasets/
-make  # Build the conversion tools
-```
+The `graph_pipeline.py` script automatically handles the checking and building of necessary tools (`BBkC` and `edgelist2binary`). You just need Python 3 installed.
 
 ### Single File Processing
 
-```bash
-# Process a single graph file
-python graph_preprocessing_pipeline.py testGraphs/fpce_graph/fpce_graph.grh
+To process a specific graph file:
 
-# Process with custom output directory
-python graph_preprocessing_pipeline.py graph.grh ./processed_graphs/graph_output/
+```bash
+python graph_pipeline.py testGraphs/fpce_graph/fpce_graph.grh
+```
+
+This will generate the following files in the same directory as the input:
+- `fpce_graph.edges`
+- `fpce_graph.clean`
+- `b_adj.bin`
+- `b_degree.bin`
+
+### Custom Output Directory
+
+You can specify a different directory for the output files:
+
+```bash
+python graph_pipeline.py testGraphs/fpce_graph/fpce_graph.grh ./processed_graphs/
 ```
 
 ### Batch Processing
 
-```bash
-# Process all .grh files in a directory
-python graph_preprocessing_pipeline.py --batch synth-graphs-1000/
-
-# Process batch with custom output base directory
-python graph_preprocessing_pipeline.py --batch synth-graphs-1000/ ./batch_processed/
-```
-
-### Advanced Options
+To process all `.grh` files in a directory:
 
 ```bash
-# Specify custom project root
-python graph_preprocessing_pipeline.py --project-root /path/to/Dense-PCE-main/ input.grh
-
-# View help and examples
-python graph_preprocessing_pipeline.py --help
-```
-
-## Output Structure
-
-For each input file `graph_name.grh`, the pipeline creates:
-
-```
-graph_name_processed/
-├── graph_name.grh      # Original graph file (copied)
-├── graph_name.edges    # Edge list format
-├── graph_name.clean    # Cleaned edge list
-├── b_adj.bin          # Binary adjacency structure
-└── b_degree.bin       # Binary degree information
+python graph_pipeline.py --batch synth-graphs-1000/
 ```
 
 ## File Formats
 
 ### .grh Format (Input)
-```
-1 2 3 4 6 7    # Node 0 connected to nodes 1,2,3,4,6,7
-0              # Node 1 connected to node 0
-0 6 7          # Node 2 connected to nodes 0,6,7
+Adjacency list format. Each line starts with a node ID (implied or explicit) followed by its neighbors.
+```text
+1 2 3    # Node 0 connected to 1, 2, 3
+0 5      # Node 1 connected to 0, 5
 ...
 ```
 
-### .edges Format
-```
-0 1
-0 2
-0 3
-...
+### Handling Edge List Files
+If your source data is in edge list format (pairs of connected nodes), you must convert it to `.grh` format before running the pipeline. Use the `transgrh.pl` script:
+
+```bash
+# Standard conversion (undirected)
+perl transgrh.pl < input.txt > output.grh
+
+# For bipartite graphs (adds offset to second column)
+perl transgrh.pl B < input.txt > output.grh
 ```
 
-### .clean Format
-```
-0 1
-0 2
-0 3
-...
+### Binary Formats (Output)
+- **`b_adj.bin`**: Compressed adjacency list representation.
+- **`b_degree.bin`**: Node degree information for fast access.
 
-```
-(Note: BBkC adds a trailing empty line)
-
-### Binary Formats
-- `b_adj.bin`: Compressed adjacency list representation
-- `b_degree.bin`: Node degree information for fast access
+These binary files allow Dense-PCE to load large graphs (millions of nodes) in seconds.
 
 ## Error Handling
 
-The pipeline includes comprehensive error handling and logging:
-
-- **Tool Verification**: Checks that BBkC and edgelist2binary are available
-- **File Validation**: Verifies input files exist and are readable
-- **Process Monitoring**: Logs each stage with success/failure status
-- **Output Validation**: Confirms expected output files are created
-
-## Logging
-
-All operations are logged to both console and `graph_preprocessing.log`:
-
-```
-2024-01-XX 10:30:15 - INFO - Converting graph.grh to edges format
-2024-01-XX 10:30:15 - INFO - Successfully converted to graph.edges
-2024-01-XX 10:30:16 - INFO - Running command: ./BBkC p graph.edges
-2024-01-XX 10:30:17 - INFO - Successfully created clean file: graph.clean
-2024-01-XX 10:30:18 - INFO - Successfully created binary files: b_adj.bin and b_degree.bin
-```
-
-## Integration with Algorithms
-
-The generated files can be used with different algorithms:
-
-### Dense-PCE (Original)
-```bash
-./dense-pce graph_name_processed/graph_name.grh --theta 0.8 --minimum 3
-```
-
-### Dense-PCE Modified (with Turan Filtering)
-```bash
-./dense-pce-mod graph_name_processed/graph_name.grh --theta 0.8 --minimum 3
-```
-
-### EBBkC (Direct Binary)
-```bash
-./BBkC e graph_name_processed/ 4 2
-```
+The pipeline logs its progress to `graph_preprocessing.log`. If a step fails (e.g., due to missing tools or permissions), check this log file for details.
 
 ## Troubleshooting
 
-### Common Issues
-
-1. **BBkC not found**
-   - Ensure BBkC is built: `cd EBBkC/src/build && make`
-   - Copy to project root: `cp BBkC ../../../`
-
-2. **edgelist2binary not found**
-   - Build tools: `cd EBBkC/Cohesive_subgraph_book/datasets && make`
-
-3. **Permission errors**
-   - Make tools executable: `chmod +x BBkC edgelist2binary`
-
-4. **Invalid .grh format**
-   - Check for non-numeric values or malformed lines
-   - Ensure node IDs are 0-indexed integers
-
-### Debug Mode
-
-Enable verbose logging by modifying the script:
-```python
-logging.basicConfig(level=logging.DEBUG)
-```
-
-## Performance Notes
-
-- **Large graphs**: Processing time scales with graph size and density
-- **Memory usage**: Binary conversion may require significant memory for large graphs
-- **Disk space**: Output files may be larger than input for sparse graphs
-- **Parallel processing**: Consider batch processing large graph collections
-
-## Examples
-
-### Example 1: Small Test Graph
-```bash
-python graph_preprocessing_pipeline.py testGraphs/fpce_graph/fpce_graph.grh
-```
-
-Output:
-- `fpce_graph_processed/fpce_graph.grh` (13 lines)
-- `fpce_graph_processed/fpce_graph.edges` (14 edges)
-- `fpce_graph_processed/fpce_graph.clean` (14 edges + empty line)
-- `fpce_graph_processed/b_adj.bin` (binary adjacency)
-- `fpce_graph_processed/b_degree.bin` (binary degrees)
-
-### Example 2: Synthetic Graph Collection
-```bash
-python graph_preprocessing_pipeline.py --batch synth-graphs-1000/
-```
-
-Processes all scale-free graphs in the collection, creating individual processed directories for each.
+1.  **Tools not building**: Ensure you have `cmake` and a C++ compiler (`g++` or `clang++`) installed.
+2.  **WSL Issues**: If running on Windows, the script attempts to use WSL. Ensure WSL is installed and functional.

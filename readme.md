@@ -1,358 +1,128 @@
-# Dense-PCE + EBBkC Integrated System
+# Dense-PCE: Efficient Pseudo-Clique Enumeration
 
-A high-performance system for finding dense pseudo-cliques in graphs using the Dense-PCE algorithm with EBBkC (Edge-Based Branch and Bound k-Clique) as an in-memory library for seed generation.
+Dense-PCE is a high-performance C++ system for finding maximal $(l, \theta)$-pseudo-cliques in large graphs. It integrates **EBBkC** (Edge-Based Branch and Bound k-Clique) as an in-memory library for fast seed generation using Turán's theorem, combined with advanced pruning techniques (order-bound and edge-bound).
+
+## 📂 Directory Overview
+
+Here is a quick overview of the repository structure:
+
+- **`build_integrated.sh`**: The main build script. Compiles EBBkC as a static library and links it with Dense-PCE.
+- **`graph_pipeline.py`**: A Python script for preprocessing `.grh` graph files into the formats required by the system (`.edges`, `.clean`, binary files).
+- **`dense-pce-r1-m1.cpp`**: The primary source code for the Dense-PCE algorithm with integrated EBBkC support.
+- **`dense-pce-r1-gated.cpp`**: A variant of the source code used for ablation studies (supports toggling specific optimizations).
+- **`EBBkC/`**: Contains the EBBkC library source code, used here for efficient clique seeding.
+- **`testGraph/`**: Directory containing example graph datasets.
+- **`build_integrated/`**: (Created after build) Contains the compiled executable and libraries.
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- **Linux/WSL**: The system is designed for Linux environments. On Windows, use WSL (Windows Subsystem for Linux).
-- **C++17 Compiler**: GCC 7+ or Clang 5+
-- **CMake**: Version 3.6 or higher
-- **OpenMP**: For parallel processing
-- **Intel TBB**: Threading Building Blocks library
+- **OS**: Linux or Windows (via WSL2).
+- **Compiler**: GCC 7+ or Clang 5+ (must support C++17).
+- **Tools**: CMake (3.6+), Python 3.x.
+- **Libraries**: OpenMP, Intel TBB (Threading Building Blocks).
 
-### Build the Integrated System
+### 1. Build the System
 
-```bash
-# Clone and navigate to the repository
-cd Dense_PCE/Dense-PCE-main
-
-# Build the integrated system (EBBkC library + Dense-PCE)
-# Choose one of the following methods:
-
-# Method 1: Bash script (Linux/macOS/WSL) - Recommended
-bash build_integrated.sh
-
-# Method 2: PowerShell script (Windows)
-.\build_integrated.ps1
-
-# Method 3: Batch script (Windows Command Prompt)
-build_integrated.bat
-
-# Method 4: WSL (if on Windows)
-wsl bash build_integrated.sh
-```
-
-### Run the System
+The easiest way to build is using the provided script, which handles dependencies and linking automatically.
 
 ```bash
-# Basic usage
-./build_integrated/dense-pce-mod-edge-order-integrated <graph-file> --minimum <min-size> --theta <density>
-
-# Example: Find pseudo-cliques of size ≥10 with density ≥0.9
-./build_integrated/dense-pce-mod-edge-order-integrated testGraphs/gplus/gplus.grh --minimum 10 --theta 0.9
-```
-
-## 📁 System Architecture
-
-### Components
-
-1. **EBBkC Library** (`EBBkC/src/`):
-   - **Purpose**: Generates R-clique seeds for pseudo-clique enumeration
-   - **API**: `EBBkC_t::list_k_clique_mem()` - returns cliques in memory
-   - **Build**: Creates `libebbkc_core.a` static library
-
-2. **Dense-PCE** (`dense-pce-mod-edge-order.cpp`):
-   - **Purpose**: Enumerates maximal pseudo-cliques using Turán's theorem
-   - **Integration**: Directly calls EBBkC library (no file I/O)
-   - **Features**: Edge-bound pruning, core-based optimization
-
-3. **Graph Pipeline** (`graph_pipeline.py`):
-   - **Purpose**: Preprocesses graphs for the system
-   - **Output**: Generates `.edges`, `.clean`, `b_adj.bin`, `b_degree.bin` files
-
-### Data Flow
-
-```
-Graph (.grh) → Graph Pipeline → Binary Files → EBBkC Library → R-cliques → Dense-PCE → Maximal Pseudo-cliques
-```
-
-## 🔧 Detailed Build Instructions
-
-### Option 1: Automated Build (Recommended)
-
-```bash
-# Run the automated build script
+# For Linux / macOS / WSL
 bash build_integrated.sh
 ```
 
-This script:
-1. **Cleans up old build artifacts** to avoid path conflicts
-2. **Builds EBBkC as a static library** (`libebbkc_core.a`)
-3. **Links all dependencies** (`libcommon-utils.a`, `libgraph-pre-processing.a`)
-4. **Compiles the integrated executable** with proper flags
-5. **Handles location changes** gracefully (no more CMake cache issues)
+This will create the executable `dense-pce-r1-m1-integrated` inside the `build_integrated/` directory.
 
-**Cross-platform support:**
-- **Linux/macOS**: `bash build_integrated.sh`
-- **Windows PowerShell**: `.\build_integrated.ps1`
-- **Windows Command Prompt**: `build_integrated.bat`
+### 2. Preprocess Your Graph
 
-### Option 2: Manual Build
+Dense-PCE requires graph data in a specific binary format for maximum efficiency. Use the included pipeline script to convert your raw graph files.
 
+**Input Format (`.grh`)**:
+Adjacency list format where each line represents a node and its neighbors.
+```text
+1 2 3    # Node 0 connects to 1, 2, 3
+0 5      # Node 1 connects to 0, 5
+...
+```
+
+**Run the Pipeline**:
 ```bash
-# Step 1: Build EBBkC library
-cd EBBkC/src
-mkdir -p build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j$(nproc)
-
-# Step 2: Compile integrated system
-cd ../../../
-g++ -std=c++17 -O3 -march=native -fopenmp \
-    -I./EBBkC/src \
-    -I./EBBkC/src/truss/dependencies/sparsepp \
-    -I./EBBkC/src/truss/dependencies/libpopcnt \
-    -I./EBBkC/src/truss/dependencies \
-    -I./EBBkC/src/truss/util \
-    -I./EBBkC/src/truss/decompose \
-    dense-pce-mod-edge-order.cpp \
-    EBBkC/src/build/libebbkc_core.a \
-    EBBkC/src/build/libcommon-utils.a \
-    EBBkC/src/build/libgraph-pre-processing.a \
-    -lgomp -ltbb -lpthread \
-    -o dense-pce-mod-edge-order-integrated
+# Syntax: python graph_pipeline.py <path_to_graph_file>
+python graph_pipeline.py testGraph/fpce_graph/fpce_graph.grh
 ```
 
-## 📊 Usage Examples
+This process:
+1.  Converts `.grh` to `.edges` (edge list).
+2.  Cleans the graph (removes self-loops, duplicates) -> `.clean`.
+3.  Generates binary files (`b_adj.bin`, `b_degree.bin`) in the same directory.
 
-### Basic Usage
+**Output**:
+You will see a set of files generated in the graph's directory. The system needs the `.grh` file AND the binary files (`b_adj.bin`, `b_degree.bin`) to be present in the same folder for the fastest loading.
 
+### 3. Run Dense-PCE
+
+Run the compiled executable with your graph and parameters.
+
+**Syntax**:
 ```bash
-# Find pseudo-cliques with minimum size 10 and density threshold 0.9
-./build_integrated/dense-pce-mod-edge-order-integrated testGraphs/gplus/gplus.grh --minimum 10 --theta 0.9
+./build_integrated/dense-pce-r1-m1-integrated <graph_file> --minimum <min_size> --theta <density> [options]
 ```
 
-### Advanced Usage
+- `<graph_file>`: Path to the `.grh` file (system automatically looks for binaries in the same folder).
+- `--minimum <l>`: Minimum size of pseudo-cliques to find (e.g., 10).
+- `--theta <θ>`: Minimum density threshold (0.0 to 1.0, e.g., 0.9).
 
+**Example**:
 ```bash
-# High-density pseudo-cliques (θ = 0.95)
-./build_integrated/dense-pce-mod-edge-order-integrated testGraphs/tech/tech.grh --minimum 15 --theta 0.95
-
-# Large pseudo-cliques with moderate density
-./build_integrated/dense-pce-mod-edge-order-integrated testGraphs/email-EU/email-EU.grh --minimum 20 --theta 0.8
+./build_integrated/dense-pce-r1-m1-integrated testGraph/fpce_graph/fpce_graph.grh --minimum 3 --theta 0.6
 ```
 
-### Batch Processing
+## ⚙️ Modes & Advanced Usage
 
+Dense-PCE supports different operating modes to toggle optimizations (Order Bound, Edge Bound, Turán Seeding). This is useful for performance analysis (ablation studies).
+
+Use the `--mode` flag or individual switches:
+
+| Mode | Description |
+|------|-------------|
+| **Mode 4** (Default) | Full optimizations: Order Bound + Edge Bound + Turán Seeding. |
+| **Mode 3** | Order Bound + Edge Bound (No Turán). |
+| **Mode 2** | Order Bound only. |
+| **Mode 1** | No pruning (Baseline enumeration). |
+
+**Example**:
 ```bash
-# Process multiple graphs
-for graph in testGraphs/*/*.grh; do
-    echo "Processing $graph..."
-    ./build_integrated/dense-pce-mod-edge-order-integrated "$graph" --minimum 10 --theta 0.9
-done
+# Run in Mode 2 (Order bound only)
+./build_integrated/dense-pce-r1-m1-integrated testGraph/fpce_graph/fpce_graph.grh --minimum 3 --theta 0.6 --mode 2
 ```
 
-## 📈 Performance Features
+You can also fine-tune specific components:
+- `--no-turan`: Disable Turán seeding.
+- `--no-order`: Disable order-bound pruning.
+- `--no-edge`: Disable edge-bound pruning.
 
-### Optimizations
+## 📊 Output Interpretation
 
-1. **In-Memory Integration**: No file I/O between EBBkC and Dense-PCE
-2. **Edge-Bound Pruning**: Eliminates unnecessary recursive calls
-3. **Core-Based Filtering**: Uses graph degeneracy for early termination
-4. **Parallel Processing**: OpenMP support for multi-threading
+The program outputs the count of maximal pseudo-cliques found for each size, along with performance metrics.
 
-### Performance Metrics
-
-The system reports:
-- **Pseudo-clique counts** by size
-- **Total iterations** performed
-- **Edge-bound pruning efficiency** (calls saved)
-- **Build times** for main and sub-problems
-
-### Example Output
-
-```
-Computed R: 6
-Directory path: testGraphs/gplus
-Detected BBkC binaries in: testGraphs/gplus, loading graph from binaries...
-degeneracy: 12
-NOT Pruning by Order Bound: (l,θ)-pseudo-cliques exist as l (10) <= μ (26)
-|V| = 725, |E| = 3956
-Truss number = 6
-total nodes: 23628
+```text
 Maximal pseudo-clique counts:
-Size 10: 8
+Size 3: 7
+Size 4: 2
+...
+Total Maximal Pseudo-Cliques: 9
 
-Total Iterations: 28055
-#calls of PCE_iter saved by EDGE bound = 22823
+Total Iterations: 145
+Edge-bound prunes saved: 42
 ```
 
-## 🔍 Graph Preprocessing
-
-### Using the Graph Pipeline
-
-The graph pipeline has been significantly improved to handle path issues when the project is moved to different devices or locations.
-
-```bash
-# Preprocess a graph for the integrated system
-python graph_pipeline.py testGraphs/gplus/gplus.grh
-
-# Process with custom output directory
-python graph_pipeline.py testGraphs/gplus/gplus.grh ./processed_graphs/
-
-# Process all graphs in a directory
-python graph_pipeline.py --batch synth-graphs-1000/
-
-# Process batch with custom output base directory
-python graph_pipeline.py --batch synth-graphs-1000/ ./batch_processed/
-```
-
-**This creates:**
-- `gplus.edges` (edge list)
-- `gplus.clean` (cleaned edges)
-- `b_adj.bin`, `b_degree.bin` (binary format)
-
-### Testing Path Handling
-
-Before running the main pipeline, test the path handling:
-
-```bash
-python test_path_handling.py
-```
-
-This verifies:
-- WSL availability and functionality
-- Path conversion accuracy
-- Tool accessibility
-- Current directory setup
-
-### Manual Preprocessing
-
-```bash
-# Convert .grh to .edges
-python3 -c "
-import sys
-sys.path.append('.')
-from graph_pipeline import GraphPipeline
-pipeline = GraphPipeline()
-pipeline.grhtoedges('testGraphs/gplus/gplus.grh')
-"
-
-# Clean edges using BBkC
-./EBBkC/src/build/BBkC p testGraphs/gplus/gplus.edges
-
-# Convert to binary format
-./EBBkC/Cohesive_subgraph_book/datasets/edgelist2binary testGraphs/gplus gplus.clean
-```
+- **Total Iterations**: Number of recursive calls explored.
+- **Edge-bound prunes saved**: How many times the edge-bound optimization successfully cut off a search branch.
 
 ## 🛠️ Troubleshooting
 
-### Common Issues
-
-1. **CMake Cache Path Conflicts**:
-   ```bash
-   # Error: CMakeCache.txt directory is different than where it was created
-   # Solution: The build scripts now automatically clean up old cache files
-   bash build_integrated.sh  # This will clean and rebuild
-   ```
-
-2. **WSL Path Conversion Errors**:
-   ```bash
-   # Error: WSL command failed with return code 1
-   # Solution: Test path handling first
-   python test_path_handling.py
-   ```
-
-3. **OpenMP Library Not Found**:
-   ```bash
-   # Install OpenMP development package
-   sudo apt-get install libomp-dev  # Ubuntu/Debian
-   ```
-
-4. **TBB Library Not Found**:
-   ```bash
-   # Install Intel TBB
-   sudo apt-get install libtbb-dev
-   ```
-
-5. **CMake Version Too Old**:
-   ```bash
-   # Update CMake
-   sudo apt-get install cmake
-   ```
-
-6. **WSL Not Available**:
-   - Install WSL2 on Windows
-   - Or use a Linux virtual machine
-
-### Build Verification
-
-```bash
-# Check if build was successful
-ls -la build_integrated/
-# Should show: dense-pce-mod-edge-order-integrated and libebbkc_core.a
-
-# Test the executable
-./build_integrated/dense-pce-mod-edge-order-integrated --help
-
-# Test path handling (if using graph pipeline)
-python test_path_handling.py
-```
-
-## 📚 Algorithm Details
-
-### Dense-PCE Algorithm
-
-- **Input**: Graph G, minimum size l, density threshold θ
-- **Output**: All maximal (l,θ)-pseudo-cliques
-- **Method**: Turán's theorem with edge-oriented branching
-
-### EBBkC Integration
-
-- **Purpose**: Generate R-clique seeds efficiently
-- **Method**: Edge-based branch and bound with truss decomposition
-- **Integration**: In-memory API eliminates process overhead
-
-### Performance Characteristics
-
-- **Time Complexity**: O(3^(n/3)) in worst case
-- **Space Complexity**: O(n²) for adjacency representation
-- **Practical Performance**: Significantly faster than file-based approaches
-
-## 🔧 Recent Improvements
-
-### Build System Enhancements
-
-- **Cross-platform support**: Bash, PowerShell, and Batch scripts
-- **Automatic cleanup**: Removes old CMake cache files to prevent path conflicts
-- **Location independence**: Works regardless of where the project is moved
-- **Better error handling**: Comprehensive error reporting and recovery
-
-### Graph Pipeline Improvements
-
-- **Robust WSL path handling**: Properly handles paths with spaces, parentheses, and special characters
-- **Enhanced error recovery**: Timeout protection and detailed logging
-- **Working directory management**: Commands execute in correct directory context
-- **Batch processing support**: Process multiple graphs efficiently
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📞 Support
-
-For issues and questions:
-1. Check the troubleshooting section
-2. Run the test scripts: `python test_path_handling.py`
-3. Review the build logs and `graph_preprocessing.log`
-4. Open an issue on GitHub
-
-## 📖 Additional Documentation
-
-- **Build Instructions**: See `BUILD_INSTRUCTIONS.md` for detailed build procedures
-- **Graph Pipeline Guide**: See `GRAPH_PIPELINE_README.md` for comprehensive pipeline documentation
-- **Path Handling Tests**: Use `test_path_handling.py` to verify system setup
-
----
-
-**Note**: This integrated system provides significant performance improvements over the original file-based approach by eliminating I/O overhead and process spawning costs. The recent improvements ensure robust operation across different platforms and locations.
+- **"EBBkC binaries not found"**: Ensure you ran `graph_pipeline.py` and that `b_adj.bin` and `b_degree.bin` are in the same folder as your graph file.
+- **Build Fails (OpenMP/TBB)**: Make sure you have the development libraries installed.
+  - Ubuntu: `sudo apt install libomp-dev libtbb-dev`
+- **WSL Paths**: If running on Windows via WSL, ensure you are executing commands within the WSL terminal and accessing files via the Linux file system for best performance.
