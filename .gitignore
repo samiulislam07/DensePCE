@@ -1,4 +1,3 @@
-.gitignore
 # folders
 testGraph2/
 build_integrated/
@@ -9,6 +8,10 @@ ablation_readme.md
 
 # Log files
 *.log
+
+*.bin
+*.clean
+*.edges
 
 # Documents
 *.pdf
@@ -42,5 +45,3 @@ edgelist2binary
 build/
 build_integrated/
 cmake-build-*/
-FPCE/
-pce12/
