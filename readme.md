@@ -46,6 +46,11 @@ Adjacency list format where each line represents a node and its neighbors.
 ...
 ```
 
+> **Note:** If your graph is in edge list format (e.g., `u v` pairs), use the provided `transgrh.pl` script to convert it to `.grh` first:
+> ```bash
+> perl transgrh.pl < input.edges > output.grh
+> ```
+
 **Run the Pipeline**:
 ```bash
 # Syntax: python graph_pipeline.py <path_to_graph_file>
@@ -66,10 +71,10 @@ Run the compiled executable with your graph and parameters.
 
 **Syntax**:
 ```bash
-./build_integrated/dense-pce-r1-m1-integrated <graph_file> --minimum <min_size> --theta <density> [options]
+./build_integrated/dense-pce-r1-m1-integrated <graph_file_path_> --minimum <min_size> --theta <density> [options]
 ```
 
-- `<graph_file>`: Path to the `.grh` file (system automatically looks for binaries in the same folder).
+- `<graph_file_path>`: Path to the `.grh` file (system automatically looks for binaries in the same folder).
 - `--minimum <l>`: Minimum size of pseudo-cliques to find (e.g., 10).
 - `--theta <θ>`: Minimum density threshold (0.0 to 1.0, e.g., 0.9).
 
@@ -78,29 +83,67 @@ Run the compiled executable with your graph and parameters.
 ./build_integrated/dense-pce-r1-m1-integrated testGraph/fpce_graph/fpce_graph.grh --minimum 3 --theta 0.6
 ```
 
-## ⚙️ Modes & Advanced Usage
+## ⚙️ Ablation Studies & Advanced Modes
 
-Dense-PCE supports different operating modes to toggle optimizations (Order Bound, Edge Bound, Turán Seeding). This is useful for performance analysis (ablation studies).
+The system supports a "Gated" operation mode for ablation studies, allowing you to toggle specific optimizations (Order Bound, Edge Bound, Turán Seeding) to analyze their impact.
 
-Use the `--mode` flag or individual switches:
-
-| Mode | Description |
-|------|-------------|
-| **Mode 4** (Default) | Full optimizations: Order Bound + Edge Bound + Turán Seeding. |
-| **Mode 3** | Order Bound + Edge Bound (No Turán). |
-| **Mode 2** | Order Bound only. |
-| **Mode 1** | No pruning (Baseline enumeration). |
-
-**Example**:
+### Build for Ablation
+While `dense-pce-r1-m1-integrated` supports these flags, you can also explicitly build the gated variant:
 ```bash
-# Run in Mode 2 (Order bound only)
-./build_integrated/dense-pce-r1-m1-integrated testGraph/fpce_graph/fpce_graph.grh --minimum 3 --theta 0.6 --mode 2
+bash build_integrated.sh dense-pce-r1-gated.cpp
+# Creates: ./build_integrated/dense-pce-r1-gated-integrated
 ```
 
-You can also fine-tune specific components:
-- `--no-turan`: Disable Turán seeding.
-- `--no-order`: Disable order-bound pruning.
-- `--no-edge`: Disable edge-bound pruning.
+### Operating Modes
+Use the `--mode <N>` switch to select a preset configuration:
+
+| Mode | Name | Description |
+|------|------|-------------|
+| **Mode 1** | **Baseline** | No pruning, no seeding. Pure node-by-node enumeration. |
+| **Mode 2** | **Order Only** | Enables Order-Bound pruning. No Edge-Bound, no Turán. |
+| **Mode 3** | **Order + Edge** | Enables Order and Edge-Bound pruning. No Turán seeding. |
+| **Mode 4** | **Full FPCE** | (Default) Order + Edge + Turán seeding. |
+
+### Fine-Grained Control
+You can override specific components of a mode using flags:
+- **Order Bound**: `--order` / `--no-order`
+- **Edge Bound**: `--edge` / `--no-edge`
+- **Turán Seeding**: `--turan` / `--no-turan`
+
+**Examples**:
+```bash
+# Mode 2 (Order only)
+./build_integrated/dense-pce-r1-gated-integrated testGraph/fpce_graph/fpce_graph.grh --minimum 3 --theta 0.6 --mode 2
+
+
+### Batch Processing with Helper Script
+
+For systematic experiments, use the `run.sh` script. It runs one graph per subdirectory, supports parallel execution, and records per‑graph logs.
+
+**Usage**:
+```bash
+bash run.sh -d <graph_root_dir> -l <min_size> -t <theta> -m <mode> [-j N] [-x <exec_path>]
+```
+
+**Parameters**:
+- `-d DIR`: Graph root directory (scans subdirectories for `.grh` files).
+- `-l SIZE`: Minimum size $\ell$ (default 10).
+- `-t THETA`: Density threshold $\theta$ (default 0.9).
+- `-m MODE`: Ablation mode (1–4, default 4).
+- `-j N`: Number of concurrent jobs (default 1).
+- `-x PATH`: Executable path (default: `./build_integrated/dense-pce-r1-gated-integrated`).
+
+**Examples**:
+```bash
+# Run Mode 4 (Full FPCE) on all graphs in testGraph/
+bash run.sh -d testGraph -l 3 -t 0.6 -m 4
+
+# Run Mode 2 (Order-only) with 4 parallel jobs
+bash run.sh -d testGraph -l 5 -t 0.8 -m 2 -j 4
+```
+
+**Logs**:
+Results are saved in `logs/run_<timestamp>/`, with one log file per graph.
 
 ## 📊 Output Interpretation
 

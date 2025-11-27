@@ -2,6 +2,44 @@
 testGraph2/
 build_integrated/
 EBBkC/src/build/
-BBkC
-EBBkC/Cohesive_subgraph_book/datasets/edgelist2binary
+logs/
+
+ablation_readme.md
+
+# Log files
 *.log
+
+# Documents
+*.pdf
+
+# Object files and build artifacts
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+*.dylib
+
+# Compiled binaries
+dense-pce
+dense-pce-mod
+dense-pce-mod-edge
+dense-pce-mod-edge-order
+dense-pce-edge
+dense-pce-memo
+dense-pce-time
+dense-pce-ob
+dense-pce-ob-eb
+dense-pce-ab
+pce
+BBkC
+edgelist2binary
+
+# CMake build directories
+build/
+build_integrated/
+cmake-build-*/
+FPCE/
+pce12/
