@@ -394,9 +394,19 @@ public:
 
         // LHS is fixed for the (ℓ, θ) target
         // Use a small epsilon to prevent 12.0000001 -> 13
-        lhs_required_edges = static_cast<int>(
-            std::ceil(theta * (min_size * (min_size - 1) / 2.0) - 1e-7)
-        );// minimum # of edges P must have to satisfy theta
+        #include <cmath>
+
+        const long long total_pairs = 1LL * min_size * (min_size - 1) / 2;
+
+        // Round theta to a fixed number of decimal places (e.g., 7)
+        const int PREC = 7;
+        double theta_rounded = std::round(theta * std::pow(10.0, PREC)) / std::pow(10.0, PREC);
+
+        // Compute lhs using double, then take ceiling
+        lhs_required_edges = static_cast<long long>(
+            std::ceil(theta_rounded * total_pairs)
+        );
+        // minimum # of edges P must have to satisfy theta
 
         // Prepare core histogram only if edge-bound can use it
         max_core_seen = 0;
